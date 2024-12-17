@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Icons</title>
+</head>
+<body>
+  <canvas id="canvas" style="display: none;"></canvas>
+  <div id="icons"></div>
+  <script>
+    const sizes = [16, 32, 48, 128];
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const iconsDiv = document.getElementById('icons');
+    
+    function drawIcon(size) {
+      canvas.width = size;
+      canvas.height = size;
+      
+      // 清空画布
+      ctx.clearRect(0, 0, size, size);
+      
+      // 绘制圆形背景
+      ctx.beginPath();
+      ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+      ctx.fillStyle = '#00a1d6';
+      ctx.fill();
+      
+      // 绘制文字
+      ctx.fillStyle = 'white';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.font = `bold ${size * 0.5}px Arial`;
+      ctx.fillText('弹', size/2, size/2);
+      
+      // 创建图片并显示
+      const img = document.createElement('img');
+      img.src = canvas.toDataURL();
+      img.title = `${size}x${size}`;
+      img.style.margin = '10px';
+      iconsDiv.appendChild(img);
+      
+      // 下载图片
+      const link = document.createElement('a');
+      link.download = `icon${size}.png`;
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+    
+    // 生成所有尺寸的图标
+    sizes.forEach(drawIcon);
+  </script>
+</body>
+</html> 
