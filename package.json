@@ -1,0 +1,20 @@
+{
+  "name": "chrome-bilibili-barrage",
+  "version": "1.0.0",
+  "description": "B站直播弹幕自动发送助手 - Chrome扩展",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "bilibili",
+    "live",
+    "chat"
+  ],
+  "author": "wangrongguo",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^5.3.1"
+  }
+} 

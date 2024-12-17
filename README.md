@@ -2,6 +2,10 @@
 
 B站直播弹幕自动发送助手 - Chrome扩展
 
+## 界面预览
+
+![扩展界面预览](icons/home.PNG)
+
 ## 项目简介
 
 Chrome-Bilibili-Barrage 是一个帮助用户在B站直播间自动发送弹幕的Chrome扩展。它提供了简单易用的界面，支持多条弹幕循环发送，可自定义发送间隔，并且具有实时状态显示功能。
@@ -56,7 +60,7 @@ Chrome-Bilibili-Barrage 是一个帮助用户在B站直播间自动发送弹幕�
 
 1. 克隆项目代码
 ```bash
-git clone https://github.com/yourusername/chrome-bilibili-barrage.git
+git clone https://github.com/wangrongguo/chrome-bilibili-barrage.git
 ```
 
 2. 打开Chrome浏览器，进入扩展管理页面：`chrome://extensions/`
@@ -146,7 +150,7 @@ chrome-bilibili-barrage/
 
 ## 作者
 
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@wangrongguo](https://github.com/wangrongguo)
 
 ## 致谢
 
