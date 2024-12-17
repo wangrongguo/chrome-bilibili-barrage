@@ -4,7 +4,7 @@ B站直播弹幕自动发送助手 - Chrome扩展
 
 ## 界面预览
 
-![扩展界面预览](icons/home.PNG)
+![扩展界面预览](./icons/home.PNG)
 
 ## 项目简介
 
@@ -112,6 +112,7 @@ chrome-bilibili-barrage/
 ├── content/           # 内容脚本
 │   └── content.js     # 页面注入脚本
 ├── icons/             # 图标资源
+│   ├── home.PNG      # 界面预览图
 │   └── generate_icons.html  # 图标生成工具
 └── README.md          # 项目说明文档
 ```
@@ -155,4 +156,4 @@ chrome-bilibili-barrage/
 ## 致谢
 
 - 感谢B站提供的平台
-- 感谢所有贡献者的支持
+- 感谢所有贡献者的支持 
