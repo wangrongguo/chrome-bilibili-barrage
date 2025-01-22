@@ -3,6 +3,8 @@ let isRunning = false;
 document.addEventListener('DOMContentLoaded', function() {
   const startButton = document.getElementById('startButton');
   const stopButton = document.getElementById('stopButton');
+  const startZanButton = document.getElementById('startZanButton');
+  const stopZanButton = document.getElementById('stopZanButton');
   const messagesTextarea = document.getElementById('messages');
   const intervalInput = document.getElementById('interval');
   const statusDiv = document.getElementById('status');
@@ -116,7 +118,16 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.tabs.sendMessage(tab.id, { action: 'stopSending' });
     updateUIState(false);
   });
-  
+  //开始点赞按钮点击事件
+  startZanButton.addEventListener('click', async function () {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    chrome.tabs.sendMessage(tab.id, { action: 'startLiking' });
+  });
+  // 停止点赞按钮点击事件
+  stopZanButton.addEventListener('click', async function () {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    chrome.tabs.sendMessage(tab.id, { action: 'stopLiking' });
+  });
   // 初始化界面状态
   updateUIState(false);
   updateMessageCount();

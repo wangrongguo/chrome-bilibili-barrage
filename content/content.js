@@ -3,6 +3,9 @@ let currentIndex = 0;
 let messages = [];
 let isStopRequested = false;
 
+// 新增点赞功能
+let likingInterval = null;
+
 // 监听消息
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   console.log('收到消息:', request);
@@ -20,6 +23,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       sendResponse({success: true});
     } else if (request.action === 'ping') {
       console.log('收到ping');
+      sendResponse({success: true});
+    } else if (request.action === 'startLiking') {
+      console.log('开始点赞');
+      startLiking();
+      sendResponse({success: true});
+    } else if (request.action === 'stopLiking') {
+      console.log('停止点赞');
+      stopLiking();
       sendResponse({success: true});
     }
   } catch (error) {
@@ -179,6 +190,36 @@ function stopSending() {
   
   console.log('停止发送完成');
 }
+
+// 新增点赞功能
+function startLiking() {
+  if (likingInterval) {
+    clearInterval(likingInterval);
+  }
+
+  likingInterval = setInterval(() => {
+    const likeButton = document.querySelector('div.like-btn');
+    if (likeButton) {
+      console.log('点击点赞按钮');
+      likeButton.click(); // 模拟点击
+    } else {
+      console.log('未找到点赞按钮');
+    }
+  }, 1000); // 每秒点击一次
+}
+
+function stopLiking() {
+  if (likingInterval) {
+    clearInterval(likingInterval);
+    likingInterval = null;
+    console.log('已停止点赞');
+  }
+}
+
+// 停止点赞按钮点击事件
+document.getElementById('stopLikingButton').addEventListener('click', function() {
+  chrome.runtime.sendMessage({ action: 'stopLiking' });
+});
 
 // 页面加载完成时输出提示
 console.log('B站直播弹幕助手已加载');
