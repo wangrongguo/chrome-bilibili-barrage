@@ -157,3 +157,4 @@ chrome-bilibili-barrage/
 
 - 感谢B站提供的平台
 - 感谢所有贡献者的支持 
+- 感谢所有人的支持
