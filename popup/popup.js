@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // 更新界面状态
   function updateUIState(running) {
     isRunning = running;
-    startButton.disabled = running;
-    stopButton.disabled = !running;
+    startButton.disabled = false;
+    stopButton.disabled = false;
     messagesTextarea.disabled = running;
     intervalInput.disabled = running;
     
