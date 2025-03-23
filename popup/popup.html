@@ -105,6 +105,20 @@
       border-radius: 4px;
       box-sizing: border-box;
     }
+    #startZanButton {
+      background-color: #4CAF50;
+      color: white;
+    }
+    #startZanButton:hover:not(:disabled) {
+      background-color: #45a049;
+    }
+    #stopZanButton {
+      background-color: #ff9800;
+      color: white;
+    }
+    #stopZanButton:hover:not(:disabled) {
+      background-color: #fb8c00;
+    }
   </style>
 </head>
 <body>
@@ -123,7 +137,7 @@
     <button id="startButton">开始发送</button>
     <button id="stopButton" disabled>停止发送</button>
   </div>
-  <div class="button-group"></div>
+  <div class="button-group">
     <button id="startZanButton">开始点赞</button>
     <button id="stopZanButton">停止点赞</button>
   </div>
@@ -134,4 +148,4 @@
   
   <script src="popup.js"></script>
 </body>
-</html> 
+</html>
